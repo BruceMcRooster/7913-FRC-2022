@@ -1,0 +1,1 @@
+Based on [a tutorial by Suyash Sonawane](https://towardsdatascience.com/understanding-and-implementing-neural-networks-in-java-from-scratch-61421bb6352c), credit goes to her for most of the AI code.
