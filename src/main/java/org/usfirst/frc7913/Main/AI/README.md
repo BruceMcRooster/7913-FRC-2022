@@ -1,5 +1,7 @@
 Based on [a tutorial by Suyash Sonawane](https://towardsdatascience.com/understanding-and-implementing-neural-networks-in-java-from-scratch-61421bb6352c), credit goes to her for most of the AI code.
 
+# Matrix.java
+
 Matrix.java is a Matrix class, with helper functions for adding, multiplying, subtracting, and running a sigmoid function, and a couple others. Matrices are essential to building neural networks, and Java doesn't natively have them
 
 |Variable|Description|
