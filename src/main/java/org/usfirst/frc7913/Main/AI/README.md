@@ -24,3 +24,21 @@ Matrix.java is a Matrix class, with helper functions for adding, multiplying, su
 |`static Matrix fromArray(double[] x)`|Returns a single-column matrix from the given array|
 |`List<Double> toArray()`|Returns the Matrix as a `List<Double>`|
 
+# NeuralNetwork.java
+
+NeuralNetwork.java is a class for creating a neural network.
+
+|Variable|Description|
+|---|---|
+|`Matrix weight_ih`|Weight matrix for the input to hidden layers|
+|`Matrix weight_ho`|weight matrix for the hidden to output layers|
+|`Matrix bias_h`|Bias for hidden layer|
+|`Matrix bias_o`|Bias for output layer|
+|`double l_rate`|The learning rate, a hyperparameter used to control the learning steps during optimization of weights|
+
+|Function|Description|
+|---|---|
+|`NeuralNetwork(int i, int h, int o)`|Creates a new `NeuralNetwork`, with the size of the input layer being `i`, the size of the hidden layer being `h`, and the size of the output layer being `o`|
+|`List<Double> predict(double[] X)`|Runs the given input array `X` through the neural network, returning the output layer as an array|
+|`void train(double[] X, double[] Y)`|Trains the `NeuralNetwork` by giving it the input `X` and the desired output `Y`|
+|void fit(double[][] X, double[][] Y, int epochs)|Trains the network the number of times given in epoch over random input `X`/output `Y` combos from the dataset, allows the neural network to take an average and train it down until it becomes incredibly precise|
