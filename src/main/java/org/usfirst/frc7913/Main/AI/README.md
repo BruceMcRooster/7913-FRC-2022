@@ -2,6 +2,12 @@ Based on [a tutorial by Suyash Sonawane](https://towardsdatascience.com/understa
 
 Matrix.java is a Matrix class, with helper functions for adding, multiplying, subtracting, and running a sigmoid function, and a couple others. Matrices are essential to building neural networks, and Java doesn't natively have them
 
+|Variable|Description|
+|---|---|
+|`double[][] data`|Stores the data in the matrix as a 2D array|
+|`int rows`|The amount of rows in the matrix|
+|`int cols`|The amount of columns in the matrix|
+
 |Function|Description|
 |---|---|
 |`Matrix(int rows, int cols)`|Creates a new Matrix with the given amount of rows and columns. Creates random doubles in each position|
