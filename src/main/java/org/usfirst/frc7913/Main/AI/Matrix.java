@@ -110,7 +110,7 @@ class Matrix {
     public void sigmoid() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                this.data[i][j] = this.data[i][j] * (1 - this.data[i][j]);
+                this.data[i][j] = 1/(1+Math.exp(-this.data[i][j]));
             }
         }
     }
