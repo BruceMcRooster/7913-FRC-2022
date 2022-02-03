@@ -1,9 +1,12 @@
 import java.lang.Math;
+import java.util.ArrayList;
+import java.util.List;
 
 class Matrix {
 
     double[][] data;
-    int rows, cols;
+    int rows;
+    int cols;
 
     public Matrix(int r, int c) {
 
@@ -48,7 +51,7 @@ class Matrix {
 
         Matrix temp = new Matrix(a.rows, a.cols);
 
-        for (int i = 0, i < a.rows; i++) {
+        for (int i = 0; i < a.rows; i++) {
             for (int j = 0; j < a.cols; j++) {
                 //Set the temp value at that position to a's value minus b's value
                 temp.data[i][j] = a.data[i][j] - b.data[i][j];
@@ -61,7 +64,7 @@ class Matrix {
     public static Matrix transpose (Matrix a) {
         Matrix temp = new Matrix(a.cols, a.rows);
 
-        for (int i = 0, i < a.rows; i++) {
+        for (int i = 0; i < a.rows; i++) {
             for (int j = 0; j < a.cols; j++) {
 
                 temp.data[i][j] = a.data[i][j];
@@ -74,7 +77,7 @@ class Matrix {
         Matrix temp = new Matrix(a.cols, b.rows);
 
         for (int i = 0; i < temp.rows; i++) {
-            for (int j = 0; j < temp.cols) {
+            for (int j = 0; j < temp.cols; j++) {
 
                 double sum = 0;
 
@@ -107,7 +110,7 @@ class Matrix {
     public void sigmoid() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                temp.data[i][j] = this.data[i][j] * (1 - this.data[i][j]);
+                this.data[i][j] = this.data[i][j] * (1 - this.data[i][j]);
             }
         }
     }

@@ -1,10 +1,16 @@
+import java.util.List;
+import java.lang.Math;
+
 public class NeuralNetwork {
 
     //weights_ih is the weight matrix for the input to hidden layers
+    Matrix weights_ih;
     //weights_ho is the weight matrix for the hidden to output layer
+    Matrix weights_ho;
     //bias_h is the bias matrix for the hidden layer
+    Matrix bias_h;
     //bias_o is the bias matrix for the output layer
-    Matrix weights_ih , weights_ho, bias_h, bias_o;
+    Matrix bias_o;
     //The learning rate, a hyperparameter used to control the learning steps during optimization of weights
     double l_rate = 0.01;
 
@@ -35,7 +41,7 @@ public class NeuralNetwork {
     public void train(double[] X, double[] Y) {
         Matrix input = Matrix.fromArray(X);
 
-        Matrix.hidden = Matrix.multiply(weights_ih,input);
+        Matrix hidden = Matrix.multiply(weights_ih,input);
         hidden.add(bias_h);
         hidden.sigmoid();
 
