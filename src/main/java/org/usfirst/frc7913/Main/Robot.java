@@ -23,11 +23,9 @@ public class Robot extends TimedRobot {
 
     public static IO io;
     public static DriveTrain DriveTrain;
-    public static Intake Intake = new Intake();
+    public static Intake Intake;
     public static Conveyor Conveyor = new Conveyor();
     public static Shooter Shooter = new Shooter();
-    private JoystickButton startShoot;
-    private JoystickButton stopShoot;
     private JoystickButton conveyorHold;
     private JoystickButton shooterHold;
 
@@ -39,8 +37,7 @@ public class Robot extends TimedRobot {
     public void robotInit() {
         DriveTrain = new DriveTrain();
         io = new IO();
-        startShoot = new JoystickButton(io.getXboxController(), 1);
-        stopShoot = new JoystickButton(io.getXboxController(), 2);
+        Intake = new Intake();
         conveyorHold = new JoystickButton(io.getXboxController(), 5);
         shooterHold = new JoystickButton(io.getXboxController(), 6);
 
@@ -48,8 +45,6 @@ public class Robot extends TimedRobot {
 
         SmartDashboard.putData("Auto mode", chooser);
 
-        startShoot.whenPressed(new StartIntake());
-        stopShoot.whenPressed(new StopIntake());
         conveyorHold.whileHeld(new MoveConveyor());
         shooterHold.whileHeld(new RunShooter());
     }
