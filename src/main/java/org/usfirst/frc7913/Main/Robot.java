@@ -25,7 +25,7 @@ public class Robot extends TimedRobot {
     public static DriveTrain DriveTrain;
     public static Intake Intake;
     public static Conveyor Conveyor;
-    public static Shooter Shooter = new Shooter();
+    public static Shooter Shooter;
     private JoystickButton shooterHold;
 
     /**
@@ -38,7 +38,7 @@ public class Robot extends TimedRobot {
         io = new IO();
         Intake = new Intake();
         Conveyor = new Conveyor();
-        shooterHold = new JoystickButton(io.getXboxController(), 6);
+        Shooter = new Shooter();
 
         chooser.setDefaultOption("Autonomous Command", new AutonomousCommand());
 

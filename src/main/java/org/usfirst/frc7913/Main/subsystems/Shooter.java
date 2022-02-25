@@ -1,5 +1,6 @@
 package org.usfirst.frc7913.Main.subsystems;
 
+import org.usfirst.frc7913.Main.Robot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
@@ -7,6 +8,9 @@ import edu.wpi.first.wpilibj.motorcontrol.PWMSparkMax;
 public class Shooter extends Subsystem {
     private PWMSparkMax bottomMotor;
     private PWMSparkMax topMotor;
+
+    private boolean shouldRun = false;
+    private double motorRunSpeed = 1;
 
     public Shooter() {
         bottomMotor = new PWMSparkMax(5);
@@ -19,22 +23,26 @@ public class Shooter extends Subsystem {
 
     @Override
     public void periodic() {
-        setSpeed(0);
+        //Turn on toggle
+        if (Robot.io.xboxController.getYButton()) {
+            shouldRun = true;
+        }
+        //Turn off toggle
+        else if (Robot.io.xboxController.getXButton()) {
+            shouldRun = false;
+        }
+
+        if (shouldRun) {
+            setSpeed(runSpeed);
+        }
+        else {
+            setSpeed(0);
+        }
     }
 
     public void setSpeed(double speed) {
         topMotor.set(speed * -1);
         bottomMotor.set(speed);
-    }
-
-    public Command start(){
-        setSpeed(1);
-        return null;
-    }
-
-    public Command stop(){
-        setSpeed(0);
-        return null;
     }
 
     @Override
